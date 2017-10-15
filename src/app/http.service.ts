@@ -4,6 +4,9 @@ import {User} from "./models/users";
 import {FormGroup} from '@angular/forms';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {AuthenticationService} from "./autentication.service";
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import {Product} from "./models/product";
 
 @Injectable()
 export class HttpService {
@@ -204,7 +207,7 @@ export class HttpService {
         .catch(this.handleError)
   }
 
-  getProducts(category?, page?, pageSize?): Observable<any> {
+  getProducts(category?, page?, pageSize?): Observable<Product[]> {
     let params = new HttpParams();
 
     if (category) {

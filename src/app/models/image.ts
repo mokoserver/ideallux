@@ -1,3 +1,3 @@
-export interface Images {
-    image:string[];
+export interface Image {
+  image: string;
 }

@@ -1,3 +1,4 @@
-export interface Image {
-  image: string;
+export interface ProductOption {
+  name: string;
+  value: string;
 }
