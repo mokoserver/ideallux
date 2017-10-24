@@ -15,6 +15,9 @@ import {HttpClientModule} from "@angular/common/http";
 import {AuthenticationService} from "./autentication.service";
 import {MatPaginatorModule} from "@angular/material/paginator";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { LeftCatalogListComponent } from './common-components/left-catalog-list/left-catalog-list.component';
+import { SingleProductComponent } from './body/single-product/single-product.component';
+import { ProductItemComponent } from './body/single-product/product-item/product-item.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     HeaderComponent,
     CatalogComponent,
     ProductListComponent,
-    ProductListCatalogComponent
+    ProductListCatalogComponent,
+    LeftCatalogListComponent,
+    SingleProductComponent,
+    ProductItemComponent
   ],
   imports: [
     BrowserModule,
