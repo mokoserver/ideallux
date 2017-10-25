@@ -241,6 +241,17 @@ export class HttpService {
     return this.http.get(this.baseUri
         .concat(this.catalogProducts)
         .concat(`/${id}`), {headers: this.getAuthHeaders()})
+        .map(items => {
+          const item = <any>items;
+          for (let i = 0; i < item.length; i++) {
+            if (item[i].images) {
+              for (let j = 0; j < item[i].images.length; j++) {
+                item[i].images[j] = this.getImage(item[i].images[j].id)
+              }
+            }
+          }
+          return item
+        })
         .map(messageBody => messageBody[0])
         .catch(this.handleError)
   }

@@ -1,6 +1,3 @@
-<p>
-  product works!
-</p>
 <div class="col-md-9 col-xs-15">
   <section id="page-content" class="page-wrapper">
     <div class="shop-section mb-80">
@@ -8,99 +5,22 @@
         <div class="row">
           <div class="col-md-9 col-xs-15">
             <!-- single-product-area start -->
-            <div class="single-product-area mb-80">
+            <div class="single-product-area mb-80" *ngIf="product">
               <div class="row">
                 <!-- imgs-zoom-area start -->
-                <div class="col-md-5 col-sm-5 col-xs-12">
-                  <div class="imgs-zoom-area">
-                    <img id="zoom_03" src="img/product/6.jpg" data-zoom-image="img/product/6.jpg" alt="">
-                    <div class="row">
-                      <div class="col-xs-12">
-                        <div id="gallery_01"
-                             class="carousel-btn slick-arrow-3 mt-30 slick-initialized slick-slider">
-                          <button type="button" class="arrow-prev slick-arrow" style=""><i
-                              class="zmdi zmdi-long-arrow-left"></i></button>
-
-                          <div aria-live="polite" class="slick-list draggable">
-                            <div class="slick-track" role="listbox"
-                                 style="opacity: 1; width: 966px; transform: translate3d(-276px, 0px, 0px);">
-                              <div class="p-c slick-slide slick-cloned" tabindex="-1" role="option"
-                                   aria-describedby="slick-slide02" style="width: 69px;"
-                                   data-slick-index="-4" aria-hidden="true">
-                                <a href="#" data-image="img/product/4.jpg"
-                                   data-zoom-image="img/product/4.jpg" tabindex="-1">
-                                  <img class="zoom_03" src="img/product/4.jpg" alt="">
-                                </a>
-                              </div>
-                              <div class="p-c slick-slide slick-cloned" tabindex="-1" role="option"
-                                   aria-describedby="slick-slide03" style="width: 69px;"
-                                   data-slick-index="-3" aria-hidden="true">
-                                <a href="#" data-image="img/product/5.jpg"
-                                   data-zoom-image="img/product/5.jpg" tabindex="-1">
-                                  <img class="zoom_03" src="img/product/5.jpg" alt="">
-                                </a>
-                              </div>
-                              <div class="p-c slick-slide slick-cloned" tabindex="-1" role="option"
-                                   aria-describedby="slick-slide04" style="width: 69px;"
-                                   data-slick-index="-2" aria-hidden="true">
-                                <a href="#" data-image="img/product/6.jpg"
-                                   data-zoom-image="img/product/6.jpg" tabindex="-1">
-                                  <img class="zoom_03" src="img/product/6.jpg" alt="">
-                                </a>
-                              </div>
-                              <div class="p-c slick-slide slick-cloned" tabindex="-1" role="option"
-                                   aria-describedby="slick-slide05" style="width: 69px;"
-                                   data-slick-index="-1" aria-hidden="true">
-                                <a href="#" data-image="img/product/7.jpg"
-                                   data-zoom-image="img/product/7.jpg" tabindex="-1">
-                                  <img class="zoom_03" src="img/product/7.jpg" alt="">
-                                </a>
-                              </div>
-                              <div class="p-c slick-slide slick-current slick-active" tabindex="-1"
-                                   role="option" aria-describedby="slick-slide00" style="width: 69px;"
-                                   data-slick-index="0" aria-hidden="false">
-                                <a href="#" data-image="img/product/2.jpg"
-                                   data-zoom-image="img/product/2.jpg" tabindex="0">
-                                  <img class="zoom_03" src="img/product/2.jpg" alt="">
-                                </a>
-                              </div>
-                              <div class="p-c slick-slide slick-active" tabindex="-1" role="option"
-                                   aria-describedby="slick-slide01" style="width: 69px;"
-                                   data-slick-index="1" aria-hidden="false">
-                                <a href="#" data-image="img/product/3.jpg"
-                                   data-zoom-image="img/product/3.jpg" tabindex="0">
-                                  <img class="zoom_03" src="img/product/3.jpg" alt="">
-                                </a>
-                              </div>
-                              <div class="p-c slick-slide slick-active" tabindex="-1" role="option"
-                                   aria-describedby="slick-slide02" style="width: 69px;"
-                                   data-slick-index="2" aria-hidden="false">
-                                <a href="#" data-image="img/product/4.jpg"
-                                   data-zoom-image="img/product/4.jpg" tabindex="0">
-                                  <img class="zoom_03" src="img/product/4.jpg" alt="">
-                                </a>
-                              </div>
-                              <div class="p-c slick-slide slick-active" tabindex="-1" role="option"
-                                   aria-describedby="slick-slide03" style="width: 69px;"
-                                   data-slick-index="3" aria-hidden="false">
-                                <a href="#" data-image="img/product/5.jpg"
-                                   data-zoom-image="img/product/5.jpg" tabindex="0">
-                                  <img class="zoom_03" src="img/product/5.jpg" alt="">
-                                </a>
-                              </div>
-
-                              <div class="p-c slick-slide slick-cloned" tabindex="-1" role="option"
-                                   aria-describedby="slick-slide00" style="width: 69px;"
-                                   data-slick-index="6" aria-hidden="true">
-                                <a href="#" data-image="img/product/2.jpg"
-                                   data-zoom-image="img/product/2.jpg" tabindex="-1">
-                                  <img class="zoom_03" src="img/product/2.jpg" alt="">
-                                </a>
-                              </div>
+                <div class="col-md-5 col-sm-5 col-xs-12" *ngIf="product.images[0]">
+                  <div class="col-md-5 col-sm-5 col-xs-12">
+                    <div class="imgs-zoom-area">
+                      <img id="zoom_03" src="{{product.images[0] | async}}">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <div id="gallery_01" class="carousel-btn slick-arrow-3 mt-30">
+                            <div class="p-c" *ngFor="let image of product.images">
+                              <a>
+                                <img class="zoom_03" src="{{image | async}}">
+                              </a>
                             </div>
                           </div>
-                          <button type="button" class="arrow-next slick-arrow" style=""><i
-                              class="zmdi zmdi-long-arrow-right"></i></button>
                         </div>
                       </div>
                     </div>
@@ -111,7 +31,7 @@
                 <!-- single-product-info start -->
                 <div class="col-md-7 col-sm-7 col-xs-12">
                   <div class="single-product-info">
-                    <h3 class="text-black-1">ANELLO SP1 BIANCO </h3>
+                    <h3 class="text-black-1">{{product.title}} </h3>
                     <!-- <h6 class="brand-name-2">brand name</h6> -->
                     <!-- hr -->
                     <hr>
@@ -119,15 +39,10 @@
                     <div class="single-product-tab">
                       <ul class="reviews-tab mb-20">
                         <li class="active"><a href="#information" data-toggle="tab">Параметры</a></li>
-                        <!-- <li ><a href="#reviews" data-toggle="tab">reviews</a></li> -->
                       </ul>
                       <div class="tab-content">
-                        <div role="tabpanel" class="tab-pane" id="information">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, neque fugit
-                            inventore quo dignissimos est iure natus quis nam illo officiis, deleniti
-                            consectetur non ,aspernatur.</p>
-                          <p>rerum blanditiis dolore dignissimos expedita consequatur deleniti consectetur
-                            non exercitationem.</p>
+                        <div role="tabpanel" class="tab-pane active" id="information">
+                          <p *ngFor="let item of product.product_options"><b>{{item.name}}</b> {{item.value}}
                         </div>
                       </div>
                     </div>
@@ -136,20 +51,18 @@
                     <div class="plus-minus-pro-action">
                       <div class="sin-plus-minus f-left clearfix">
                         <li>
-                          <p class="color-title f-left">КОЛЛИЧЕСТВО</p>
+                          <p class="color-title f-left">КОЛИЧЕСТВО</p>
                         </li>
                         <li>
                           <div class="cart-plus-minus f-left">
-                            <div class="dec qtybutton">-</div>
-                            <input type="text" value="1" name="qtybutton" class="cart-plus-minus-box">
-                            <div class="inc qtybutton">+</div>
+                            <input type="text" value="0" name="qtybutton" class="cart-plus-minus-box">
                           </div>
                         </li>
                       </div>
                       <div class="sin-pro-action f-right">
                         <ul class="action-button">
                           <li>
-                            <h3 class="pro-price">BYN 100.00</h3>
+                            <h3 class="pro-price">BYN {{product.price}}</h3>
                           </li>
                           <li>
                             <a href="cart.html" title="Перейти в корзину" tabindex="0"><i
