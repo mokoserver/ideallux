@@ -7,6 +7,7 @@ import {Component, OnInit, Input} from '@angular/core';
 })
 export class LeftCatalogListComponent implements OnInit {
   @Input() pull = '-pull';
+  @Input() colMd = '3';
   constructor() { }
 
   ngOnInit() {

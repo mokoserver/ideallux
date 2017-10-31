@@ -1,0 +1,28 @@
+<div class="shop-section mb-80">
+  <div class="container">
+    <div class="row">
+
+      <app-left-catalog-list [colMd]="2" [pull]="''"></app-left-catalog-list>
+
+      <div class="col-md-10 col-sm-12">
+        <div class="tab-content">
+          <div class="tab-pane active" id="shopping-cart">
+            <div class="shopping-cart-content">
+              <form action="#">
+
+                <app-basket-table></app-basket-table>
+                <app-basket-total-cost></app-basket-total-cost>
+                <app-basket-make-order></app-basket-make-order>
+
+              </form>
+            </div>
+          </div>
+
+          <!--<app-basket-checkout></app-basket-checkout>-->
+          <!--<app-basket-order-complete></app-basket-order-complete>-->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
