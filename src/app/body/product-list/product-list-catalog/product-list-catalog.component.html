@@ -28,15 +28,15 @@
               </div>
               <div class="product-info">
                 <h6 class="product-title">
-                  <a href="single-product.html">{{item.title}} </a>
+                  <a href="#" [routerLink]="'/product'" [queryParams]="{id: item._id}">{{item.title}} </a>
                 </h6>
 
                 <h3 class="pro-price" *ngIf="item.price">BYN {{item.price}}</h3>
-                <ul class="action-button">
+<!--                <ul class="action-button">
                   <li>
                     <a href="#" title="Добавить в корзину"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
                   </li>
-                </ul>
+                </ul>-->
               </div>
             </div>
           </div>
@@ -51,24 +51,24 @@
           <div class="col-md-12" *ngFor="let item of products">
             <div class="shop-list product-item">
               <div class="product-img">
-                <a href="single-product.html">
+                <a href="#" [routerLink]="'/product'" [queryParams]="{id: item._id}">
                   <img *ngIf="item.images" [src]="item.images[0] | async" alt=""/>
                 </a>
               </div>
               <div class="product-info">
                 <div class="clearfix">
                   <h6 class="product-title f-left">
-                    <a href="single-product.html">{{item.title}} </a>
+                    <a href="#" [routerLink]="'/product'" [queryParams]="{id: item._id}">{{item.title}} </a>
                   </h6>
                 </div>
                 <!--<h6 class="brand-name mb-30">Brand Name</h6>-->
                 <h3 class="pro-price" *ngIf="item.price">BYN {{item.price}}</h3>
                 <p>{{item.description}}</p>
-                <ul class="action-button">
+<!--                <ul class="action-button">
                   <li>
                     <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
                   </li>
-                </ul>
+                </ul>-->
               </div>
             </div>
           </div>
