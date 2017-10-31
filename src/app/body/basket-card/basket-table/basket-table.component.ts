@@ -14,6 +14,7 @@ export class BasketTableComponent implements OnInit {
 
   ngOnInit() {
     const info = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
+    if (!info) return;
     info.map(data => {
       this.http.getProductById(data._id)
           .subscribe(loaded => {
@@ -21,8 +22,6 @@ export class BasketTableComponent implements OnInit {
             this.data$.push(loaded)
           })
     });
-    console.log(info)
-    console.log(this.data$)
     this.setScripts();
   }
 
