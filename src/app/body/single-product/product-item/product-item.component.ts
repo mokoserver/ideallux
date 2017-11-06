@@ -1,10 +1,11 @@
-import {Component, OnInit, AfterViewInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, ParamMap} from "@angular/router";
 import {HttpService} from "../../../http.service";
 import {Product} from "../../../models/product";
 import 'rxjs/add/operator/switchMap';
 import {InitMain} from "../../../../assets/js/main.init";
 import {AuthenticationService} from "../../../autentication.service";
+import {AppStore} from "../../../app.store.service";
 
 @Component({
   selector: 'app-product',
@@ -15,12 +16,18 @@ export class ProductItemComponent implements OnInit {
   product: Product;
   localArray = [];
 
-  constructor(private activatedRoute: ActivatedRoute, private httpService: HttpService, private auth: AuthenticationService) {
+  constructor(private activatedRoute: ActivatedRoute, private httpService: HttpService,
+              private auth: AuthenticationService, private store: AppStore) {
   }
 
   ngOnInit() {
     this.activatedRoute.queryParamMap
         .switchMap((params: ParamMap) => {
+          const cache = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
+          if (cache) {
+            const item = cache.find(object => object._id == params.get('id'));
+            if (item) this.localArray.push(item);
+          }
           return this.httpService.getProductById(params.get('id'))
         })
         .subscribe(data => {
@@ -34,11 +41,23 @@ export class ProductItemComponent implements OnInit {
       InitMain.elevateZoomActive();
       // InitMain.slickSingleProductZoomImage();
       InitMain.cartPlusMinusButton();
-    }, 1000);
+    }, 0);
   }
 
   addToBasket(id) {
     const cache = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
+
+    if (this.localArray.length) {
+      this.localArray = [];
+      cache.splice(cache.indexOf(data => data._id == id), 1);
+      if (!cache.length) {
+        localStorage.clear();
+      } else {
+        localStorage.setItem(this.auth.getUserUsername(), JSON.stringify(cache));
+      }
+      this.store.setValue('productsQuantity', new Date());
+      return;
+    }
 
     if (cache) {
       for (let i = 0; i < cache.length; i++) {
@@ -50,8 +69,13 @@ export class ProductItemComponent implements OnInit {
       _id: id,
       quantity: parseInt((<any>document.getElementById('qtybutton')).value)
     };
-    this.localArray.push(obj);
+
+    if (!cache || !cache.length || cache.indexOf(data => data._id == id) != -1) {
+      this.localArray.push(obj);
+    }
 
     localStorage.setItem(this.auth.getUserUsername(), JSON.stringify(this.localArray));
+
+    this.store.setValue('productsQuantity', new Date());
   }
 }

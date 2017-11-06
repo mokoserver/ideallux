@@ -4,7 +4,7 @@
 
       <app-left-catalog-list [colMd]="2" [pull]="''"></app-left-catalog-list>
 
-      <div class="col-md-10 col-sm-12">
+      <div class="col-md-10 col-sm-12" *ngIf="quantity !== 0">
         <div class="tab-content">
           <div class="tab-pane active" id="shopping-cart">
             <div class="shopping-cart-content">
@@ -22,6 +22,7 @@
           <!--<app-basket-order-complete></app-basket-order-complete>-->
         </div>
       </div>
+      <h1 *ngIf="quantity === 0">Корзина пуста!</h1>
 
     </div>
   </div>

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {AuthenticationService} from "../../../autentication.service";
 import {HttpService} from "../../../http.service";
 import {InitMain} from "../../../../assets/js/main.init";
+import {AppStore} from "../../../app.store.service";
 
 @Component({
   selector: 'app-basket-table',
@@ -10,7 +11,8 @@ import {InitMain} from "../../../../assets/js/main.init";
 })
 export class BasketTableComponent implements OnInit {
   data$ = [];
-  constructor(private auth: AuthenticationService, private http: HttpService) { }
+  constructor(private auth: AuthenticationService, private http: HttpService,
+              private store: AppStore) { }
 
   ngOnInit() {
     const info = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
@@ -23,6 +25,18 @@ export class BasketTableComponent implements OnInit {
           })
     });
     this.setScripts();
+  }
+
+  deleteProduct(id) {
+    const cache = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
+    cache.splice(cache.indexOf(data => data._id == id), 1);
+    this.data$.splice(cache.indexOf(data => data._id == id), 1);
+    if (!cache.length) {
+      localStorage.clear();
+    } else {
+      localStorage.setItem(this.auth.getUserUsername(), JSON.stringify(cache));
+    }
+    this.store.setValue('productsQuantity', new Date());
   }
 
   setScripts() {

@@ -49,7 +49,7 @@
               <li>
                 <form>
                   <div class="cart-plus-minus f-left">
-                    <input type="text" value="0" name="qtybutton" id="qtybutton" class="cart-plus-minus-box">
+                    <input type="text" value="1" name="qtybutton" id="qtybutton" class="cart-plus-minus-box">
                   </div>
                 </form>
               </li>
@@ -60,7 +60,7 @@
                   <h3 class="pro-price">BYN {{product.price}}</h3>
                 </li>
                 <li>
-                  <a href="#" title="Перейти в корзину" tabindex="0"  (click)="addToBasket(product._id)" [routerLink]="'/basket'"><i
+                  <a [ngClass]="{'activeBasket': localArray.length}" tabindex="0" (click)="addToBasket(product._id)"><i
                       class="zmdi zmdi-shopping-cart-plus"></i></a>
                 </li>
               </ul>

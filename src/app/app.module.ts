@@ -24,6 +24,7 @@ import {BasketTableComponent} from './body/basket-card/basket-table/basket-table
 import {BasketTotalCostComponent} from './body/basket-card/basket-total-cost/basket-total-cost.component';
 import {BasketOrderCompleteComponent} from './body/basket-card/basket-order-complete/basket-order-complete.component';
 import {BasketMakeOrderComponent} from './body/basket-card/basket-make-order/basket-make-order.component';
+import {AppStore} from "./app.store.service";
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import {BasketMakeOrderComponent} from './body/basket-card/basket-make-order/bas
     FormsModule,
     MatPaginatorModule
   ],
-  providers: [HttpService, AuthenticationService],
+  providers: [HttpService, AuthenticationService, AppStore],
   bootstrap: [AppComponent]
 })
 export class AppModule {

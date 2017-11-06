@@ -1,3 +1,9 @@
 .imgs-zoom-area {
     width: 300px;
 }
+
+.activeBasket {
+    background: #FF7F00;
+    border-color: #FF7F00;
+    color: #fff;
+}
