@@ -70,7 +70,7 @@ export class ProductItemComponent implements OnInit {
       quantity: parseInt((<any>document.getElementById('qtybutton')).value)
     };
 
-    if (!cache || !cache.length || cache.indexOf(data => data._id == id) != -1) {
+    if (!cache || !cache.length || cache.indexOf(data => data._id == id) === -1) {
       this.localArray.push(obj);
     }
 
