@@ -49,7 +49,7 @@ export class ProductItemComponent implements OnInit {
 
     if (this.localArray.length) {
       this.localArray = [];
-      cache.splice(cache.indexOf(data => data._id == id), 1);
+      cache.splice(cache.findIndex(data => data._id == id), 1);
       if (!cache.length) {
         localStorage.clear();
       } else {
@@ -70,7 +70,7 @@ export class ProductItemComponent implements OnInit {
       quantity: parseInt((<any>document.getElementById('qtybutton')).value)
     };
 
-    if (!cache || !cache.length || cache.indexOf(data => data._id == id) === -1) {
+    if (!cache || !cache.length || cache.findIndex(data => data._id == id) === -1) {
       this.localArray.push(obj);
     }
 
