@@ -263,19 +263,9 @@ export class HttpService {
         .catch(this.handleError)
   }
 
-  postNewOrder(productId, quantity) {
-    const orderitems = [{
-      id: productId,
-      quantity: quantity
-    }];
-    const user = this.auth.getLoginAndPassword();
-    const value = {
-      deviceid: user.login,
-      date: new Date(),
-      orderitems: orderitems
-    };
+  postNewOrder(form: FormGroup) {
     return this.http
-        .post(this.baseUri.concat(this.catalogOrders), value, {headers: this.getAuthHeaders()})
+        .post(this.baseUri.concat(this.catalogOrders), form.value, {headers: this.getAuthHeaders()})
         .catch(this.handleError)
   }
 
@@ -294,7 +284,7 @@ export class HttpService {
     }
     let headers = new HttpHeaders();
     headers = headers.append("Authorization", "Basic " + btoa(user.login + ':' + user.password));
-    headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
+    // headers = headers.append("Content-Type", "application/x-www-form-urlencoded");
     return headers;
   }
 }
