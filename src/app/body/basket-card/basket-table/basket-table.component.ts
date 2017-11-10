@@ -30,7 +30,7 @@ export class BasketTableComponent implements OnInit {
   deleteProduct(id) {
     const cache = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
     cache.splice(cache.findIndex(data => data._id == id), 1);
-    this.data$.splice(cache.findIndex(data => data._id == id), 1);
+    this.data$.splice(this.data$.findIndex(data => data._id == id), 1);
     if (!cache.length) {
       localStorage.clear();
     } else {
