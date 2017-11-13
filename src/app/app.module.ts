@@ -25,6 +25,7 @@ import {BasketTotalCostComponent} from './body/basket-card/basket-total-cost/bas
 import {BasketOrderCompleteComponent} from './body/basket-card/basket-order-complete/basket-order-complete.component';
 import {BasketMakeOrderComponent} from './body/basket-card/basket-make-order/basket-make-order.component';
 import {AppStore} from "./app.store.service";
+import { MapComponent } from './body/map/map.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {AppStore} from "./app.store.service";
     BasketTableComponent,
     BasketTotalCostComponent,
     BasketOrderCompleteComponent,
-    BasketMakeOrderComponent
+    BasketMakeOrderComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
