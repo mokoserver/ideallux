@@ -28,10 +28,10 @@ Note: This color style file includes all external color css file.
 /*@import url("skin-cyan.css");*/
 
 /*5*/
-@import url("skin-default.css");
+/*@import url("skin-default.css");*/
 
 /*6*/
-/*@import url("skin-green.css");*/
+ @import url("skin-green.css");
 
 /*7*/
 /*@import url("skin-purple.css");*/
