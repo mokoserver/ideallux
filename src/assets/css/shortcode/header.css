@@ -21,7 +21,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   text-transform: capitalize;
 }
 .main-menu > li > a, .dropdwn li a, .single-mega-item li a {
-   position: relative; 
+   position: relative;
 }
 .main-menu > li > a::before, .dropdwn li a:before, .single-mega-item li a:before {
   background: #ffbf7f none repeat scroll 0 0;
@@ -49,13 +49,13 @@ NOTE: This is Header style file. All Header related style included in this file.
 }
 .main-menu > li:hover > a{
   color: #FF7F00;
-} 
+}
 .dropdwn > li:hover > a{
   color: #ff7f00;
 }
 .single-mega-item > li:hover > a{
   color: #ff7f00;
-} 
+}
 /*dropdwn Style*/
 .dropdwn {
   background: #ffffff none repeat scroll 0 0;
@@ -134,7 +134,7 @@ NOTE: This is Header style file. All Header related style included in this file.
 }
 .single-mega-item li:last-child{
   border-bottom: 0px solid #000;
-} 
+}
 .single-mega-item li a {
   color: #666;
   display: inline-block;
@@ -389,7 +389,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   text-align: center;
 }
 .total-cart-in:hover .cart-toggler > a {
-  color: #ff7f00;
+  color: #48ee34;
 }
 .cart-icon {
   font-size: 20px;
@@ -487,7 +487,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   font-weight: 700;
 }
 .top-cart-inner.subtotal span {
-  color: #ff7f00;
+  color: #48ee34;
 }
 .top-cart-inner.view-cart h4, .top-cart-inner.check-out h4 {
   color: #666;
@@ -500,7 +500,7 @@ NOTE: This is Header style file. All Header related style included in this file.
 }
 
 /* ****************
-  header-2 
+  header-2
 ***************** */
 .header-2 {
   left: 0;
