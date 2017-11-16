@@ -18,7 +18,7 @@ NOTE: This is Header style file. All Header related style included in this file.
 .main-menu > li > a {
   color: #303030;
   display: block;
-  text-transform: capitalize;
+  text-transform: none;
 }
 .main-menu > li > a, .dropdwn li a, .single-mega-item li a {
    position: relative;
@@ -130,7 +130,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   color: #444;
   font-size: 14px;
   padding-bottom: 20px;
-  text-transform: capitalize;
+  text-transform: none;
 }
 .single-mega-item li:last-child{
   border-bottom: 0px solid #000;
@@ -141,7 +141,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   font-size: 13px;
   line-height: 22px;
   padding: 3px 0;
-  text-transform: capitalize;
+  text-transform: none;
 }
 .main-menu li:hover .mega-menu-area{
   transform: scale(1);
@@ -257,7 +257,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   overflow: hidden;
   padding: 10px 20px;
   text-align: center;
-  text-transform: capitalize;
+  text-transform: none;
   white-space: nowrap;
   width: 50px;
 }

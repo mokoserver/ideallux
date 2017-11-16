@@ -15,7 +15,7 @@
   background: #4caf50 none repeat scroll 0 0;
 }
 .mean-container .mean-nav ul li a:hover {
-  color: #4caf50;
+  color: а;
 }
 textarea:focus {
   border-color: #4caf50;
@@ -86,7 +86,7 @@ a:hover {
 /*header*/
 .main-menu > li:hover > a{
   color: #4caf50;
-} 
+}
 .dropdwn > li:hover > a{
   color: #4caf50;
 }
@@ -95,7 +95,7 @@ a:hover {
 }
 .single-mega-item > li:hover > a{
   color: #4caf50;
-} 
+}
 .sticky .main-menu > li:hover > a{
   color: #4caf50;
 }
@@ -111,7 +111,7 @@ a:hover {
 .user-meta > li > ul > li > a:hover {
   color: #4caf50;
 }
-/*footer*/ 
+/*footer*/
 .footer-menu li:hover a, .footer-menu li:hover a i {
   color: #4caf50;
 }
@@ -142,7 +142,7 @@ a:hover {
   background: #4caf50 none repeat scroll 0 0;
 }
 .breadcrumb-list > li:hover::before {
-  color: #4caf50; 
+  color: #4caf50;
 }
 .breadcrumb-list > li:hover > a {
   color: #4caf50;
