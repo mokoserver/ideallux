@@ -22,7 +22,14 @@
           <!--<app-basket-order-complete></app-basket-order-complete>-->
         </div>
       </div>
-      <h1 *ngIf="quantity === 0">Корзина пуста!</h1>
+
+      <div class="col-md-10 col-sm-12"*ngIf="quantity === 0">
+        <div class="container">
+          <div class="text-center">
+            <h1 class="slider2-title-2">Корзина пуста!</h1>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
