@@ -872,6 +872,7 @@ transform: scale(1);
   color: #666666;
   font-weight: 700;
   text-transform: uppercase;
+  width:
 }
 /* -------------------------------------
     9.6 Widget search
@@ -1047,6 +1048,7 @@ transform: scale(1);
 .imgs-zoom-area {
   width: 100%;
 }
+
 .imgs-zoom-area img {
   width: 100% !important;
 }
@@ -1347,6 +1349,7 @@ table {width: 100%}
 .custom-textarea {
   height: 110px;
 }
+
 /* -------------------------------------
     11.4 Payment-method
 ------------------------------------- */

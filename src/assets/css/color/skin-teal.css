@@ -41,6 +41,7 @@ a.button {
 .submit-btn-1 {
   background: #2395ec;
 }
+
 .header-search-inner::before {
   background: #2395ec none repeat scroll 0 0;
 }
@@ -81,7 +82,7 @@ a:hover {
 /*header*/
 .main-menu > li:hover > a{
   color: #2395ec;
-} 
+}
 .dropdwn > li:hover > a{
   color: #2395ec;
 }
@@ -90,7 +91,7 @@ a:hover {
 }
 .single-mega-item > li:hover > a{
   color: #2395ec;
-} 
+}
 .sticky .main-menu > li:hover > a{
   color: #2395ec;
 }
@@ -106,7 +107,7 @@ a:hover {
 .user-meta > li > ul > li > a:hover {
   color: #2395ec;
 }
-/*footer*/ 
+/*footer*/
 .footer-menu li:hover a, .footer-menu li:hover a i {
   color: #2395ec;
 }
@@ -137,7 +138,7 @@ a:hover {
   background: #2395ec none repeat scroll 0 0;
 }
 .breadcrumb-list > li:hover::before {
-  color: #2395ec; 
+  color: #2395ec;
 }
 .breadcrumb-list > li:hover > a {
   color: #2395ec;

@@ -661,10 +661,13 @@ textarea:focus {
 }
 .btn-hover-1:hover::before,
 .btn-hover-2:hover::before {
+
   width: 100%;
 }
 .btn-hover-2::before {
   background: #ff7f00 none repeat scroll 0 0;
+
+
 }
 /*************************
   8. back-to-top
