@@ -5,17 +5,17 @@
         <h6 class="widget-title border-left mb-20">Оформить заказ</h6>
         <div class="row">
           <div class="col-md-6">
-            <input type="text" formControlName="customer" placeholder="Ваше имя">
+            <input type="text" name="name" placeholder="Ваше имя">
           </div>
           <div class="col-md-6">
-            <input type="text" formControlName="email" placeholder="Ваша почта">
+            <input type="text" name="email" placeholder="Ваша почта">
           </div>
           <div class="col-md-6">
-            <input type="text" formControlName="phone" placeholder="Ваш телефон">
+            <input type="text" name="phone" placeholder="Ваш телефон">
           </div>
           <div class="col-md-12">
-            <textarea class="custom-textarea" formControlName="note" placeholder="Сообщение"></textarea>
-            <button class="submit-btn-1 black-bg btn-hover-2" (click)="makeOrder()">Заказать</button>
+            <textarea class="custom-textarea" name="message" placeholder="Сообщение"></textarea>
+            <button class="submit-btn-1 mt-20 btn-hover-1" (click)="makeOrder()">Заказать</button>
           </div>
         </div>
       </form>
