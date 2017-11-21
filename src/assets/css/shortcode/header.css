@@ -112,9 +112,11 @@ NOTE: This is Header style file. All Header related style included in this file.
   width: 100%;
 }
 .main-menu li.mega-parent {
+  
     position: static;
 }
 .single-mega-item {
+
   float: left;
   padding: 0 15px;
   width: 33.3333%;

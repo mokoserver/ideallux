@@ -67,6 +67,12 @@ body {
   font-size: 14px;
   line-height: 24px;
 }
+
+.ipaltext {
+  font-family: "helvetica", ;
+}
+
+
 .img{
   max-width: 100%;
   transition: all 0.3s ease-out 0s;

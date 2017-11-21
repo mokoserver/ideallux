@@ -102,6 +102,7 @@
     7.1 By brand section
 ------------------------------------- */
 .single-brand-product {
+  font-family: "Times New Roman", Times, serif;
   position: relative;
 }
 .single-brand-product > a {
