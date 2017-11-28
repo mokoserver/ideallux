@@ -13,8 +13,8 @@ export class PdfCatalogComponent implements OnInit {
     {name: 'ABB Basic 55.pdf', imgurl: 'assets/pdf/ABB Basic 55.jpg', pdfurl: 'assets/pdf/ABB Basic 55.pdf'},
     {name: 'Abris 2017.pdf', imgurl: 'assets/pdf/Abris 2017.jpg', pdfurl: 'assets/pdf/Abris 2017.pdf'},
     {name: 'Arlight Алюминиевый профиль  2017.pdf', imgurl: 'assets/pdf/Arlight Алюминиевый профиль  2017.jpg', pdfurl: 'assets/pdf/Arlight Алюминиевый профиль  2017.pdf'},
-    {name: 'ABB Basic 55.pdf', imgurl: 'assets/pdf/ABB Basic 55.jpg', pdfurl: 'assets/pdf/ABB Basic 55.pdf'},
-    {name: 'ABB Basic 55.pdf', imgurl: 'assets/pdf/ABB Basic 55.jpg', pdfurl: 'assets/pdf/ABB Basic 55.pdf'}
+    {name: 'Arlight Алюминиевый профиль для монтажа в гипсокартон 2017.pdf', imgurl: 'assets/pdf/Arlight Алюминиевый профиль для монтажа в гипсокартон 2017.jpg', pdfurl: 'assets/pdf/Arlight Алюминиевый профиль для монтажа в гипсокартон 2017.pdf'},
+    {name: 'Arlight Источники питания 2017.pdf', imgurl: 'assets/pdf/Arlight Источники питания 2017.jpg', pdfurl: 'assets/pdf/Arlight Источники питания 2017.pdf'}
 
   ];
 
