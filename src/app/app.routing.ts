@@ -4,6 +4,7 @@ import {ProductListComponent} from './body/product-list/product-list.component';
 import {SingleProductComponent} from './body/single-product/single-product.component';
 import {BasketCardComponent} from './body/basket-card/basket-card.component';
 import {MapComponent} from "./body/map/map.component";
+import {PdfCatalogComponent} from "./body/pdf-catalog/pdf-catalog.component";
 
 export const AppRoutes: Routes = [
   {path: '', component: CatalogComponent},
@@ -11,4 +12,5 @@ export const AppRoutes: Routes = [
   {path: 'product', component: SingleProductComponent},
   {path: 'basket', component: BasketCardComponent},
   {path: 'map', component: MapComponent},
+  {path: 'pdf-catalog', component: PdfCatalogComponent},
 ]

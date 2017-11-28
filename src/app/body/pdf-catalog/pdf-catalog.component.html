@@ -1,0 +1,64 @@
+<!-- SHOP SECTION START -->
+<div class="shop-section mb-80">
+  <div class="container">
+    <div class="row">
+      <div class="row">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <div class="ipaltext section-title text-left mb-40">
+            <h2 class="uppercase">Каталог продукции</h2>
+            <h6>Здесь вы найдете товар на любой вкус</h6>
+          </div>
+        </div>
+        <div class="col-md-9 col-md-push-3 col-sm-12">
+          <div class="shop-content">
+
+            <!-- Tab Content start -->
+            <div class="tab-content">
+              <!-- grid-view -->
+              <div role="tabpanel" class="tab-pane active" id="grid-view">
+                <div class="row">
+
+
+                  <ul class="pdfcatalog">
+                    <li *ngFor="let pdfcatalog "
+                        [class.selected]="hero === selectedPdfCatalog"
+                        (click)="onSelect(hero)">
+                      <span class="badge">{{hero.id}}</span> {{hero.name}}
+                    </li>
+                  </ul>
+
+                  <li *ngFor="let pdfitem of pdfitems">
+
+                    <!-- product-item start -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                      <div class="product-item">
+                        <div class="product-img">
+                          <a href="{{pdfitem.pdfurl}}" target="_blank" alt="main logo">
+                            <img src="{{pdfitem.imgurl}}" alt="">
+                          </a>
+                        </div>
+                        <div class="product-info">
+                          <h6 class="product-title">
+                            <a href="{{pdfitem.pdfurl}}" target="_blank">{{pdfitem.name}} </a>
+                          </h6>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- product-item end -->
+
+                  </li>
+
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SHOP SECTION END -->
+
+  </div>
+
+

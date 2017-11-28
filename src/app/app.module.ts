@@ -26,6 +26,7 @@ import {BasketOrderCompleteComponent} from './body/basket-card/basket-order-comp
 import {BasketMakeOrderComponent} from './body/basket-card/basket-make-order/basket-make-order.component';
 import {AppStore} from "./app.store.service";
 import { MapComponent } from './body/map/map.component';
+import { PdfCatalogComponent } from './body/pdf-catalog/pdf-catalog.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MapComponent } from './body/map/map.component';
     BasketTotalCostComponent,
     BasketOrderCompleteComponent,
     BasketMakeOrderComponent,
-    MapComponent
+    MapComponent,
+    PdfCatalogComponent
   ],
   imports: [
     BrowserModule,
