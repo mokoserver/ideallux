@@ -27,6 +27,8 @@ import {BasketMakeOrderComponent} from './body/basket-card/basket-make-order/bas
 import {AppStore} from "./app.store.service";
 import { MapComponent } from './body/map/map.component';
 import { PdfCatalogComponent } from './body/pdf-catalog/pdf-catalog.component';
+import {MaterialaginatorIntl} from "./shared/mat-pager-intl";
+import {MatPaginatorIntl} from "@angular/material";
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { PdfCatalogComponent } from './body/pdf-catalog/pdf-catalog.component';
     FormsModule,
     MatPaginatorModule
   ],
-  providers: [HttpService, AuthenticationService, AppStore],
+  providers: [HttpService, AuthenticationService, AppStore,
+    {provide: MatPaginatorIntl, useClass: MaterialaginatorIntl}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
