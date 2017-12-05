@@ -41,7 +41,7 @@ export class ProductItemComponent implements OnInit {
       InitMain.elevateZoomActive();
       // InitMain.slickSingleProductZoomImage();
       InitMain.cartPlusMinusButton();
-    }, 0);
+    }, 200);
   }
 
   addToBasket(id) {

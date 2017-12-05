@@ -7,7 +7,7 @@
         <li class="active">
           <a href="#grid-view" data-toggle="tab"><i class="zmdi zmdi-view-module"></i></a>
         </li>
-        <li>
+        <li *ngIf="listView">
           <a href="#list-view" data-toggle="tab"><i class="zmdi zmdi-view-list-alt"></i></a>
         </li>
       </ul>
@@ -32,11 +32,11 @@
                 </h6>
 
                 <h3 class="pro-price" *ngIf="item.price">BYN {{item.price}}</h3>
-<!--                <ul class="action-button">
+                <ul class="action-button">
                   <li>
-                    <a href="#" title="Добавить в корзину"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+                    <a [ngClass]="{'activeBasket': isActive(item._id)}" title="Добавить в корзину" (click)="addToBasket(item._id)"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
                   </li>
-                </ul>-->
+                </ul>
               </div>
             </div>
           </div>
@@ -64,11 +64,11 @@
                 <!--<h6 class="brand-name mb-30">Brand Name</h6>-->
                 <h3 class="pro-price" *ngIf="item.price">BYN {{item.price}}</h3>
                 <p>{{item.description}}</p>
-<!--                <ul class="action-button">
+                <ul class="action-button">
                   <li>
-                    <a href="#" title="Add to cart"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
+                    <a [ngClass]="{'activeBasket': isActive(item._id)}" title="Add to cart" (click)="addToBasket(item._id)"><i class="zmdi zmdi-shopping-cart-plus"></i></a>
                   </li>
-                </ul>-->
+                </ul>
               </div>
             </div>
           </div>

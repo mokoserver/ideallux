@@ -13,4 +13,4 @@ export const AppRoutes: Routes = [
   {path: 'basket', component: BasketCardComponent},
   {path: 'map', component: MapComponent},
   {path: 'pdf-catalog', component: PdfCatalogComponent},
-]
+];

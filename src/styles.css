@@ -3,3 +3,14 @@
 .active {
     color: #909090;
 }
+.qtybutton {
+    cursor: pointer;
+}
+
+.zmdi-close {
+    cursor: pointer;
+}
+
+.zmdi-shopping-cart-plus {
+    cursor: pointer;
+}
