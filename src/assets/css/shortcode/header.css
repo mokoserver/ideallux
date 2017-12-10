@@ -16,8 +16,10 @@ NOTE: This is Header style file. All Header related style included in this file.
   position: relative;
 }
 .main-menu > li > a {
-  color: #303030;
+
+  color: #191919;
   display: block;
+
   text-transform: none;
 }
 .main-menu > li > a, .dropdwn li a, .single-mega-item li a {
@@ -34,6 +36,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   transition: all 0.5s ease 0s;
   visibility: hidden;
   width: 0;
+  font-weight:700;
 }
 .main-menu > li:hover > a::before, .dropdwn li:hover a:before, .single-mega-item li:hover a:before {
   width: 100%;
@@ -227,7 +230,7 @@ NOTE: This is Header style file. All Header related style included in this file.
 }
 .call-us p {
   color: #cccccc;
-  font-weight: 500;
+  font-weight:700;
   line-height: 40px;
 }
 /*top-link*/
