@@ -19,7 +19,8 @@ NOTE: This is Header style file. All Header related style included in this file.
 
   color: #191919;
   display: block;
-
+  font-weight: 700;
+  font-size: large;
   text-transform: none;
 }
 .main-menu > li > a, .dropdwn li a, .single-mega-item li a {
