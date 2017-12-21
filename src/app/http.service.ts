@@ -10,7 +10,8 @@ import {Product} from "./models/product";
 
 @Injectable()
 export class HttpService {
-  private baseUri: string = 'http://35.156.122.111:8000/restapi/v1.1/';
+  private baseUri: string = 'https://moko.by/restapi/v1.1/';
+ // private baseUri: string = 'http://35.156.122.111:8000/restapi/v1.1/';
   // private baseUri: string = 'http://35.157.244.150:5000/restapi/v1.1/';
   private catalogUser: string = 'catalog/user';
   private catalogShop: string = 'catalog/shop';
