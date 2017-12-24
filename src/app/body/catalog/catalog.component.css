@@ -1,10 +1,10 @@
 /* Слайдер */
 .slides {
-  height:687px;
+  height:500px;
   margin:50px auto;
   overflow:hidden;
   position:relative;
-  width:1400px;
+  width:1200px;
 }
 .slides ul {
   list-style:none;
