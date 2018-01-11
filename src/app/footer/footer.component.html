@@ -81,12 +81,12 @@
               <div class="single-footer">
                 <h4 class="ipaltext widget-title border-left mb-20">Связаться с нами</h4>
                 <div class="footer-message">
-                  <form action="#">
-                    <input type="text" name="name" placeholder="Ваше имя...">
-                    <input type="text" name="email" placeholder="Ваша почта...">
-                    <input type="text" name="phone" placeholder="Ваш телефон...">
-                    <textarea class="height-80" name="message" placeholder="Задавайте ваш вопрос..."></textarea>
-                    <button class="submit-btn-1 mt-20 btn-hover-1" type="submit">отправить</button>
+                  <form action="#" [formGroup]="form">
+                    <input type="text" formControlName="author" name="name" placeholder="Ваше имя...">
+                    <input type="text" formControlName="email" name="email" placeholder="Ваша почта...">
+                    <input type="text" formControlName="phone" name="phone" placeholder="Ваш телефон...">
+                    <textarea class="height-80" name="message" formControlName="body" placeholder="Задавайте ваш вопрос..."></textarea>
+                    <button type="button" class="submit-btn-1 mt-20 btn-hover-1" [disabled]="!form.valid" [ngStyle]="{'background': !form.valid ? '#2222' : '#036A3F'}" (click)="sendFeedback()">отправить</button>
                   </form>
                 </div>
               </div>
