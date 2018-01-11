@@ -11,8 +11,8 @@
         <li><a routerLinkActive="active" href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Экстерьер'}">Уличные</a><ul></ul></li>
         <li><a routerLinkActive="active" href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Встраиваемые'}">Встраиваемые</a><ul></ul></li>
         <li><a routerLinkActive="active" href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Лампочки'}">Лампочки</a><ul></ul></li>
-        <li><a routerLinkActive="active" href="#">Розетки и выключатели</a><ul></ul></li>
-        <li><a routerLinkActive="active" href="#" style="color: #d20000; font-weight: bold">Распродажа</a><ul></ul></li>
+        <li><a routerLinkActive="active" href="#" style="color: #d20000; font-weight: bold"[routerLink]="'/product-list'" [queryParams]="{category: 'Распродажа'}">Распродажа</a><ul></ul></li>
+
       </ul>
     </div>
   </aside>

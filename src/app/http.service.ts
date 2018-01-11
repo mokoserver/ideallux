@@ -11,7 +11,7 @@ import {Product} from "./models/product";
 @Injectable()
 export class HttpService {
   private baseUri: string = 'https://moko.by/restapi/v1.1/';
- // private baseUri: string = 'http://35.156.122.111:8000/restapi/v1.1/';
+  // private baseUri: string = 'http://35.156.122.111:8000/restapi/v1.1/';
   // private baseUri: string = 'http://35.157.244.150:5000/restapi/v1.1/';
   private catalogUser: string = 'catalog/user';
   private catalogShop: string = 'catalog/shop';
@@ -35,7 +35,7 @@ export class HttpService {
    */
   getUsers(): Observable<User[]> {
     return this.http.get(this.baseUri.concat(this.catalogUser))
-        .catch(this.handleError);
+      .catch(this.handleError);
   }
 
   /**
@@ -45,7 +45,7 @@ export class HttpService {
    */
   postUser(form: FormGroup): Observable<User> {
     return this.http.post(this.baseUri.concat(this.catalogUser), form.value)
-        .catch(this.handleError);
+      .catch(this.handleError);
   }
 
   /**
@@ -56,29 +56,29 @@ export class HttpService {
    */
   putUser(id, form: FormGroup): Observable<User> {
     return this.http.put(this.baseUri.concat(this.catalogUser + '${id}'), form.value)
-        .catch(this.handleError);
+      .catch(this.handleError);
   }
 
   getShop(): Observable<any> {
     return this.http.get(this.baseUri.concat(this.catalogShop), {headers: this.getAuthHeaders()})
-        .catch(this.handleError);
+      .catch(this.handleError);
   }
 
   postShop(form: FormGroup): Observable<any> {
     return this.http.post(this.baseUri.concat(this.catalogShop), {}, {headers: this.getAuthHeaders(form)})
-        .catch(this.handleError);
+      .catch(this.handleError);
   }
 
   putShop(form: FormGroup): Observable<any> {
     return this.http.put(this.baseUri
-        .concat(this.catalogShop)
-        .concat(`/${form.value['_id']}`), form.value, {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .concat(this.catalogShop)
+      .concat(`/${form.value['_id']}`), form.value, {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   getApp(): Observable<any> {
     return this.http.get(this.baseUri.concat(this.catalogApp), {headers: this.getAuthHeaders()})
-        .catch(this.handleError);
+      .catch(this.handleError);
   }
 
   postApp(form: FormGroup): Observable<any> {
@@ -92,120 +92,120 @@ export class HttpService {
         "Галерея"
       ]
     }, {headers: this.getAuthHeaders(form)})
-        .catch(this.handleError);
+      .catch(this.handleError);
   }
 
   putApp(form: FormGroup): Observable<any> {
     return this.http.put(this.baseUri
-        .concat(this.catalogApp)
-        .concat(`/${form.value['_id']}`), form.value, {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .concat(this.catalogApp)
+      .concat(`/${form.value['_id']}`), form.value, {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   getMessage(message: string): Observable<any> {
     const params = new HttpParams().set('category', message);
     return this.http.get(this.baseUri.concat(this.catalogMessages), {headers: this.getAuthHeaders(), params: params})
-        .map(message => {
-          const mess = <any>message;
-          for (let i = 0; i < mess.length; i++) {
-            for (let j = 0; j < mess[i].images.length; j++) {
-              mess[i].images[j] = this.getImage(mess[i].images[j].id)
-            }
+      .map(message => {
+        const mess = <any>message;
+        for (let i = 0; i < mess.length; i++) {
+          for (let j = 0; j < mess[i].images.length; j++) {
+            mess[i].images[j] = this.getImage(mess[i].images[j].id)
           }
-          return mess
-        })
-        .catch(this.handleError);
+        }
+        return mess
+      })
+      .catch(this.handleError);
   }
 
   getMessageById(messageName, id): Observable<any> {
     const params = new HttpParams().set('category', messageName);
     return this.http.get(this.baseUri
-        .concat(this.catalogMessages)
-        .concat(`/${id}`), {headers: this.getAuthHeaders(), params: params})
-        .map(messageBody => messageBody[0])
-        .catch(this.handleError)
+      .concat(this.catalogMessages)
+      .concat(`/${id}`), {headers: this.getAuthHeaders(), params: params})
+      .map(messageBody => messageBody[0])
+      .catch(this.handleError)
   }
 
   deleteMessage(id): Observable<any> {
     return this.http.delete(this.baseUri
-        .concat(this.catalogMessages)
-        .concat(`/${id}`), {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .concat(this.catalogMessages)
+      .concat(`/${id}`), {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   putMessage(messageName: string, messageBody: FormGroup): Observable<any> {
     const params = new HttpParams().set('category', messageName);
     return this.http.put(
-        this.baseUri
-            .concat(this.catalogMessages)
-            .concat(`/${messageBody.value['_id']}`), messageBody.value, {
-          headers: this.getAuthHeaders(),
-          params: params
-        })
-        .catch(this.handleError)
+      this.baseUri
+        .concat(this.catalogMessages)
+        .concat(`/${messageBody.value['_id']}`), messageBody.value, {
+        headers: this.getAuthHeaders(),
+        params: params
+      })
+      .catch(this.handleError)
   }
 
   postMessage(messageBody: FormGroup): Observable<any> {
     return this.http
-        .post(this.baseUri.concat(this.catalogMessages), messageBody.value, {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .post(this.baseUri.concat(this.catalogMessages), messageBody.value, {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   getImage(id): Observable<any> {
     return this.http.get(this.baseUri
-        .concat(this.catalogImage)
-        .concat(`/${id}`), {headers: this.getAuthHeaders()})
-        .map(messageBody => messageBody['image'])
-        .catch(this.handleError)
+      .concat(this.catalogImage)
+      .concat(`/${id}`), {headers: this.getAuthHeaders()})
+      .map(messageBody => messageBody['image'])
+      .catch(this.handleError)
   }
 
   postCategory(form: FormGroup): Observable<any> {
     return this.http
-        .post(this.baseUri.concat(this.catalogCategory), form.value, {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .post(this.baseUri.concat(this.catalogCategory), form.value, {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   getCategories(): Observable<any> {
     return this.http
-        .get(this.baseUri
-            .concat(this.catalogCategory), {headers: this.getAuthHeaders()})
-        .catch(this.handleError);
+      .get(this.baseUri
+        .concat(this.catalogCategory), {headers: this.getAuthHeaders()})
+      .catch(this.handleError);
   }
 
   getCategoryById(id): Observable<any> {
     return this.http
-        .get(this.baseUri
-            .concat(this.catalogCategory)
-            .concat(`/${id}`), {headers: this.getAuthHeaders()})
-        .catch(this.handleError);
+      .get(this.baseUri
+        .concat(this.catalogCategory)
+        .concat(`/${id}`), {headers: this.getAuthHeaders()})
+      .catch(this.handleError);
   }
 
   putCategory(form: FormGroup): Observable<any> {
     return this.http
-        .put(this.baseUri
-            .concat(this.catalogCategory)
-            .concat(`/${form.value['_id']}`), form.value, {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .put(this.baseUri
+        .concat(this.catalogCategory)
+        .concat(`/${form.value['_id']}`), form.value, {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   deleteCategory(id): Observable<any> {
     return this.http
-        .delete(this.baseUri.concat(this.catalogCategory).concat(`/${id}`), {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .delete(this.baseUri.concat(this.catalogCategory).concat(`/${id}`), {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   postProduct(form: FormGroup): Observable<any> {
     return this.http
-        .post(this.baseUri.concat(this.catalogProducts), form.value, {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .post(this.baseUri.concat(this.catalogProducts), form.value, {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   putProduct(form: FormGroup): Observable<any> {
     return this.http
-        .put(this.baseUri
-            .concat(this.catalogProducts)
-            .concat(`/${form.value['_id']}`), form.value, {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .put(this.baseUri
+        .concat(this.catalogProducts)
+        .concat(`/${form.value['_id']}`), form.value, {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   getProducts(category?, page?, pageSize?): Observable<Product[]> {
@@ -223,51 +223,51 @@ export class HttpService {
     }
 
     return this.http
-        .get(this.baseUri.concat(this.catalogProducts), {headers: this.getAuthHeaders(), params: params})
-        .map(items => {
-          const item = <any>items;
-          for (let i = 0; i < item.length; i++) {
-            if (item[i].images) {
-              for (let j = 0; j < item[i].images.length; j++) {
-                item[i].images[j] = this.getImage(item[i].images[j].id)
-              }
+      .get(this.baseUri.concat(this.catalogProducts), {headers: this.getAuthHeaders(), params: params})
+      .map(items => {
+        const item = <any>items;
+        for (let i = 0; i < item.length; i++) {
+          if (item[i].images) {
+            for (let j = 0; j < item[i].images.length; j++) {
+              item[i].images[j] = this.getImage(item[i].images[j].id)
             }
           }
-          return item
-        })
-        .catch(this.handleError);
+        }
+        return item
+      })
+      .catch(this.handleError);
   }
 
   getProductById(id): Observable<any> {
     return this.http.get(this.baseUri
-        .concat(this.catalogProducts)
-        .concat(`/${id}`), {headers: this.getAuthHeaders()})
-        .map(items => {
-          const item = <any>items;
-          for (let i = 0; i < item.length; i++) {
-            if (item[i].images) {
-              for (let j = 0; j < item[i].images.length; j++) {
-                item[i].images[j] = this.getImage(item[i].images[j].id)
-              }
+      .concat(this.catalogProducts)
+      .concat(`/${id}`), {headers: this.getAuthHeaders()})
+      .map(items => {
+        const item = <any>items;
+        for (let i = 0; i < item.length; i++) {
+          if (item[i].images) {
+            for (let j = 0; j < item[i].images.length; j++) {
+              item[i].images[j] = this.getImage(item[i].images[j].id)
             }
           }
-          return item
-        })
-        .map(messageBody => messageBody[0])
-        .catch(this.handleError)
+        }
+        return item
+      })
+      .map(messageBody => messageBody[0])
+      .catch(this.handleError)
   }
 
   deleteProduct(id): Observable<any> {
     return this.http.delete(this.baseUri
-        .concat(this.catalogProducts)
-        .concat(`/${id}`), {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .concat(this.catalogProducts)
+      .concat(`/${id}`), {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
   postNewOrder(form: FormGroup) {
     return this.http
-        .post(this.baseUri.concat(this.catalogOrders), form.value, {headers: this.getAuthHeaders()})
-        .catch(this.handleError)
+      .post(this.baseUri.concat(this.catalogOrders), form.value, {headers: this.getAuthHeaders()})
+      .catch(this.handleError)
   }
 
 
