@@ -109,7 +109,8 @@
   display: block;
 }
 .single-brand-product img {
-  width: 100%;
+  width: 270px;
+
 }
 .single-brand-product .brand-title {
   bottom: 15px;
