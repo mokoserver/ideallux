@@ -49,19 +49,65 @@ a.button26:active {
   95% { left: -300%; }
   100% { left: -400%; }
 }
-
-body { margin: 0; }
-div#slider { overflow: hidden; }
-div#slider figure img { width: 20%; float: left; }
-div#slider figure {
-  position: relative;
-  width: 500%;
-  margin: 0;
-  left: 0;
-  text-align: left;
-  font-size: 0;
-  animation: 30s slidy infinite;
+* {
+  box-sizing: border-box;
 }
+body, figure {
+  margin: 0; background: #101010;
+  font-family: Istok Web, sans-serif;
+  font-weight: 100;
+}
+div#captioned-gallery {
+  width: 100%; overflow: hidden;
+}
+figure.slider {
+  position: relative; width: 500%;
+  font-size: 0; animation: 30s slidy infinite;
+}
+figure.slider figure {
+  width: 20%; height: auto;
+  display: inline-block;  position: inherit;
+}
+figure.slider img { width: 100%; height: auto; }
+figure.slider figure figcaption {
+  position: absolute; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  color: #fff; width: 100%;
+  font-size: 2rem; padding: .6rem;
+}
+
+
+
+
+.faded{
+
+  width: 75%;
+  height: auto;
+  margin: 0;
+  padding: 0px;
+  /* Обнуляем значение отступов */
+  float: left;
+
+
+
+}
+
+img#bannerFour{
+
+  width: 25%%;
+}
+
+img#bannerFive{
+
+  width: 25%;
+}
+
+img#bannerSix{
+  width: 25%;
+}
+
+
+
 
 
 
