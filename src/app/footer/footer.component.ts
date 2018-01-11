@@ -15,12 +15,16 @@ export class FooterComponent {
       email: new FormControl('', Validators.required),
       phone: new FormControl('', Validators.required),
       body: new FormControl('', Validators.required),
+      date: new FormControl(''),
       category: new FormControl('Обратная связь')
     })
   }
 
   sendFeedback() {
     console.log(this.form);
-    this.httpService.postMessage(this.form).subscribe()
+    this.form.patchValue({ date: new Date() });
+    this.httpService.postMessage(this.form).subscribe(data => {
+      this.form.reset();
+    })
   }
 }
