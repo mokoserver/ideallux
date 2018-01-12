@@ -7,13 +7,14 @@
         <div class="col-sm-6 hidden-xs">
           <div class="call-us">
             <nav id="primary-menu">
-            <ul class="hr">
-              <li>+375 (44) 7407582</li>
-              <li>ideallux2017@gmail.com</li>
-              <li>Беларусь г.Минск ул.Каховская 70А</li>
+              <ul class="hr">
 
-            </ul>
-              </nav>
+                <li class="ipaltext mega-parent"><span class="glyphicon glyphicon-phone"></span> +375 (44) 7407582</li>
+                <li><span class="glyphicon glyphicon-envelope"></span> ideallux2017@gmail.com</li>
+                <li><span class="glyphicon glyphicon-home"></span> Беларусь г.Минск ул.Каховская 70А</li>
+
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
@@ -32,43 +33,45 @@
               </a>
             </div>
           </div>
+
           <!-- primary-menu -->
           <div class="col-md-8 hidden-sm hidden-xs">
             <nav id="primary-menu">
               <ul class="main-menu text-center">
-                <li  class="ipaltext mega-parent"><a href="index.html">Главная</a>
+                <li class="ipaltext mega-parent"><a href="index.html">Главная</a>
 
                 </li>
 
 
-
-
-
-                <li class="ipaltext mega-parent"><a href="shop.html">Каталог</a>
+                <li class="ipaltext mega-parent"><a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Люстры'}">Каталог</a>
                   <div class="mega-menu-area mega-menu-area-2 clearfix">
-                    <div class="mega-menu-link mega-menu-link-2  f-left" >
-                      <ul class="single-mega-item" >
+                    <div class="mega-menu-link mega-menu-link-2  f-left">
+                      <ul class="single-mega-item">
                         <li class="ipaltext menu-title">Основной каталог</li>
                         <li>
-                          <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Настольные'}"  >Люстры</a>
+                          <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Настольные'}">Люстры</a>
                         </li>
                         <li>
                           <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Торшеры'}">Торшеры</a>
                         </li>
                         <li>
-                          <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Светильники'}">Потолочные светильники</a>
+                          <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Светильники'}">Потолочные
+                            светильники</a>
                         </li>
                         <li>
-                          <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Настольные'}">Настольные лампы</a>
+                          <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Настольные'}">Настольные
+                            лампы</a>
                         </li>
                         <li>
                           <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Бра'}">Бра</a>
                         </li>
                         <li>
-                          <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Экстерьер'}">Уличные светильники</a>
+                          <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Экстерьер'}">Уличные
+                            светильники</a>
                         </li>
                         <li>
-                          <a href="/#" [routerLink]="'/product-list'" [queryParams]="{category: 'Встраиваемые'}">Встраиваемые светильники</a>
+                          <a href="/#" [routerLink]="'/product-list'" [queryParams]="{category: 'Встраиваемые'}">Встраиваемые
+                            светильники</a>
                         </li>
                         <li>
                           <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Лампочки'}">Лампочки</a>
@@ -77,13 +80,13 @@
                       <ul class="single-mega-item">
                         <li class="ipaltext menu-title">Дополнительный каталог</li>
                         <li>
-                          <a href="shop.html">Розетки и выключатели</a>
+                          <a href="index.html">Розетки и выключатели</a>
                         </li>
                         <li>
-                          <a href="#">Cотрудничество</a>
+                          <a href="index.html">Cотрудничество</a>
                         </li>
                         <li>
-                          <a href="#">Контакты</a>
+                          <a href="index.html">Контакты</a>
                         </li>
 
                       </ul>
@@ -92,20 +95,16 @@
                 </li>
 
 
-
                 <li class="ipaltext mega-parent"><a href="#">Доставка и оплата</a>
                 </li>
 
-                <li class="ipaltext mega-parent"><a href="shop.html">Распродажа</a>
+                <li class="ipaltext mega-parent"><a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Распродажа'}">Распродажа</a>
                 </li>
-
-
-
-
 
               </ul>
             </nav>
           </div>
+
           <!-- header-search & total-cart -->
           <div class="col-md-2 col-sm-6 col-xs-12">
             <div class="search-top-cart  f-right">
@@ -224,12 +223,13 @@
 </header>
 <!-- END HEADER AREA -->
 
+
 <!-- START MOBILE MENU AREA -->
 <div class="mobile-menu-area hidden-lg hidden-md">
   <div class="container">
     <div class="row">
       <div class="col-xs-12">
-        <div class="ipaltext mobile-menu">
+        <div class="mobile-menu">
           <nav id="dropdown">
             <ul>
               <li>
@@ -257,19 +257,19 @@
                     <a href="shop.html">Торшеры</a>
                   </li>
                   <li>
-                    <a href="shop.html">Светильники</a>
+                    <a href="shop.html">Потолочные светильники</a>
                   </li>
                   <li>
-                    <a href="shop.html">Настольные</a>
+                    <a href="shop.html">Настольные лампы</a>
                   </li>
                   <li>
                     <a href="shop.html">Бра</a>
                   </li>
                   <li>
-                    <a href="shop.html">Уличные</a>
+                    <a href="shop.html">Уличные светильники</a>
                   </li>
                   <li>
-                    <a href="shop.html">Встраиваемые</a>
+                    <a href="shop.html">Встраиваемые светильники</a>
                   </li>
                   <li>
                     <a href="shop.html">Лампочки</a>
