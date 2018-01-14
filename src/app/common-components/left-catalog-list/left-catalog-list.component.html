@@ -1,8 +1,9 @@
 <div class="col-md-{{colMd}} col-md{{pull}}-9 col-sm-12">
   <aside class="widget widget-categories box-shadow mb-30">
-    <h6 class="ipaltext widget-title border-left mb-20">Каталог</h6>
+    <h4 class="ipaltext widget-title border-left mb-20">Каталог</h4>
     <div id="cat-treeview" class="product-cat">
       <ul>
+        <li><hr></li>
         <li><a routerLinkActive="active" href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Люстры'}">Люстры</a><ul></ul></li>
         <li><a routerLinkActive="active" href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Торшеры'}">Торшеры</a><ul></ul></li>
         <li><a routerLinkActive="active" href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Светильники'}">Потолочные</a><ul></ul></li>
@@ -11,6 +12,7 @@
         <li><a routerLinkActive="active" href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Экстерьер'}">Уличные</a><ul></ul></li>
         <li><a routerLinkActive="active" href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Встраиваемые'}">Встраиваемые</a><ul></ul></li>
         <li><a routerLinkActive="active" href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Лампочки'}">Лампочки</a><ul></ul></li>
+        <li><hr></li>
         <li><a routerLinkActive="active" href="#" style="color: #d20000; font-weight: bold"[routerLink]="'/product-list'" [queryParams]="{category: 'Распродажа'}">Распродажа</a><ul></ul></li>
 
       </ul>
