@@ -3,18 +3,33 @@
     font-size: 24px;
     line-height: 24px;
 }
+.submenu{
+  background-color: #645e61;
+  z-index:2;
+}
+.menuu > li {
+  float: left;
+  padding: 0 20px 0 0;
+}
+.submenu {
+  display: none;
+  position: absolute;
+}
+.submenu > li {
+  padding: 0 0 0 0;
+  width: 250px;
+  background-color: #374148;
+  display: block;
+  border: 1px #bfb9bc;
+}
+.submenu > li > p {
+  padding: 5px;
+}
+.submenu > li > p:hover {
+  background-color: #444f58;
+}
+.menuu > li:hover > ul.submenu {
+  display: block;
+}
 
-.hr {
-  color: #cecece;
-}
-ul.hr {
 
-  position: static;
-  margin: 0; /* Обнуляем значение отступов */
-  padding: 4px; /* Значение полей */
-}
-ul.hr li {
-  display: inline; /* Отображать как строчный элемент */
-  margin-right: 5px; /* Отступ слева */
-  padding: 3px; /* Поля вокруг текста */
-}
