@@ -39,7 +39,7 @@ export class InitMain {
    1. jQuery MeanMenu
    ******************************************** */
   static initMeanmenu() {
-    $.meanmenu();
+    $('nav#dropdown').meanmenu();
   }
 
   /* ********************************************

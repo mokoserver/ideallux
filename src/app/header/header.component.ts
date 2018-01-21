@@ -33,5 +33,6 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     InitMain.blogPageManuDropdown();
+    InitMain.initMeanmenu();
   }
 }

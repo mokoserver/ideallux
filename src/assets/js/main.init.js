@@ -21,7 +21,7 @@ var InitMain = exports.InitMain = function () {
      1. jQuery MeanMenu
      ******************************************** */
     value: function initMeanmenu() {
-      $.meanmenu();
+      $('nav#dropdown').meanmenu();
     }
 
     /* ********************************************
