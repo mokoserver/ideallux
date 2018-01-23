@@ -1,0 +1,32 @@
+.padin{
+
+
+  width: 300px;
+  height: 230px;
+
+  padding: 2px 5px 2px 5px;
+}
+
+.fontmy{
+  font-family: 'Roboto', sans-serif;
+
+}
+
+.myfont{
+
+  font-size: 15px;
+  color: #666666;
+
+}
+
+.fff{
+  font-size: 13px;
+  color: #878787;
+
+}
+
+.bord{
+
+  border: 1px #000000;
+
+}
