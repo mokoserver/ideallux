@@ -245,46 +245,46 @@
                 <a href="index.html">Главная</a>
               </li>
               <li>
-                <a href="#">Доставка и оплата</a>
+                <a href="#" [routerLink]="'/delivery'">Доставка и оплата</a>
               </li>
 
               <li><a href="contact.html">Контакты</a>
               </li>
 
-              <li><a href="#">Сотрудничество</a>
+              <li><a href="#" >Сотрудничество</a>
               </li>
 
-              <li><a href="#">Распродажа</a>
+              <li><a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Распродажа'}">Распродажа</a>
               </li>
 
-              <li><a href="#">Каталог</a>
+              <li><a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Люстры'}">Каталог</a>
                 <ul>
                   <li>
-                    <a href="shop.html">Люстры</a>
+                    <a href="shop.html" [routerLink]="'/product-list'" [queryParams]="{category: 'Люстры'}">Люстры</a>
                   </li>
                   <li>
-                    <a href="shop.html">Торшеры</a>
+                    <a href="shop.html" [routerLink]="'/product-list'" [queryParams]="{category: 'Торшеры'}">Торшеры</a>
                   </li>
                   <li>
-                    <a href="shop.html">Потолочные светильники</a>
+                    <a href="shop.html" [routerLink]="'/product-list'" [queryParams]="{category: 'Светильники'}">Потолочные светильники</a>
                   </li>
                   <li>
-                    <a href="shop.html">Настольные лампы</a>
+                    <a href="shop.html" [routerLink]="'/product-list'" [queryParams]="{category: 'Настольные'}">Настольные лампы</a>
                   </li>
                   <li>
-                    <a href="shop.html">Бра</a>
+                    <a href="shop.html" [routerLink]="'/product-list'" [queryParams]="{category: 'Бра'}">Бра</a>
                   </li>
                   <li>
-                    <a href="shop.html">Уличные светильники</a>
+                    <a href="shop.html" [routerLink]="'/product-list'" [queryParams]="{category: 'Экстерьер'}">Уличные светильники</a>
                   </li>
                   <li>
-                    <a href="shop.html">Встраиваемые светильники</a>
+                    <a href="shop.html" [routerLink]="'/product-list'" [queryParams]="{category: 'Встраиваемые'}">Встраиваемые светильники</a>
                   </li>
                   <li>
-                    <a href="shop.html">Лампочки</a>
+                    <a href="shop.html" [routerLink]="'/product-list'" [queryParams]="{category: 'Лампочки'}">Лампочки</a>
                   </li>
                   <li>
-                    <a href="shop.html">Распродажа</a>
+                    <a href="shop.html" [routerLink]="'/product-list'" [queryParams]="{category: 'Распродажа'}">Распродажа</a>
                   </li>
                   <li>
                     <a href="shop.html">Розетки и выключатели</a>
