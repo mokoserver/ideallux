@@ -7,7 +7,7 @@
       <div class="col-md-5 col-sm-5 col-xs-12" *ngIf="product.images[0]">
         <div class="col-md-5 col-sm-5 col-xs-12">
           <div class="imgs-zoom-area">
-            <img id="zoom_03" src="{{product.images[0] | async}}">
+            <img id="zoom_03" src="{{product.images[0] | async}}" (click)="openModalGallery(product.images[0])">
 
 
 
