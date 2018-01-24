@@ -11,6 +11,7 @@ import {AppStore} from "../../../app.store.service";
 })
 export class BasketTableComponent implements OnInit {
   data$ = [];
+  scriptsSetted = false;
   constructor(private auth: AuthenticationService, private http: HttpService,
               private store: AppStore) { }
 
@@ -22,9 +23,9 @@ export class BasketTableComponent implements OnInit {
           .subscribe(loaded => {
             loaded.quantity = data.quantity;
             this.data$.push(loaded)
+            this.setScripts();
           })
     });
-    this.setScripts();
   }
 
   deleteProduct(id) {
@@ -40,9 +41,12 @@ export class BasketTableComponent implements OnInit {
   }
 
   setScripts() {
-    setTimeout(() => {
-      InitMain.cartPlusMinusButton();
-    }, 1000);
+    if (!this.scriptsSetted) {
+      this.scriptsSetted = true;
+      setTimeout(() => {
+        InitMain.cartPlusMinusButton();
+      }, 1000);
+    }
   }
 
 

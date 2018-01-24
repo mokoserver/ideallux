@@ -28,8 +28,9 @@ import {AppStore} from "./app.store.service";
 import { MapComponent } from './body/map/map.component';
 import { PdfCatalogComponent } from './body/pdf-catalog/pdf-catalog.component';
 import {MaterialaginatorIntl} from "./shared/mat-pager-intl";
-import {MatPaginatorIntl} from "@angular/material";
+import {MatPaginatorIntl, MatDialogModule} from "@angular/material";
 import { DeliveryComponent } from './body/delivery/delivery.component';
+import { ImageGalleryModalComponent } from './body/single-product/product-item/image-gallery-modal/image-gallery-modal.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { DeliveryComponent } from './body/delivery/delivery.component';
     BasketMakeOrderComponent,
     MapComponent,
     PdfCatalogComponent,
-    DeliveryComponent
+    DeliveryComponent,
+    ImageGalleryModalComponent
   ],
   imports: [
     BrowserModule,
@@ -59,7 +61,11 @@ import { DeliveryComponent } from './body/delivery/delivery.component';
     ReactiveFormsModule,
     RouterModule.forRoot(AppRoutes),
     FormsModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDialogModule
+  ],
+  entryComponents: [
+    ImageGalleryModalComponent
   ],
   providers: [HttpService, AuthenticationService, AppStore,
     {provide: MatPaginatorIntl, useClass: MaterialaginatorIntl}],

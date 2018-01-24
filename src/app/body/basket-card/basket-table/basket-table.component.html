@@ -24,10 +24,12 @@
       <td class="product-price">{{item.price}}</td>
       <td class="product-quantity">
         <div class="cart-plus-minus f-left">
-          <input type="text" value="{{item.quantity}}" name="qtybutton" class="cart-plus-minus-box">
+          <input type="text" value="{{item.quantity}}" name="qtybutton"
+                 #quantity
+                 class="cart-plus-minus-box">
         </div>
       </td>
-      <td class="product-subtotal">{{item.price}}</td>
+      <td class="product-subtotal">{{item.price * quantity.value}}</td>
       <td class="product-remove">
         <a (click)="deleteProduct(item._id)"><i class="zmdi zmdi-close"></i></a>
       </td>

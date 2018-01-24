@@ -22,7 +22,6 @@ export class ProductListCatalogComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private httpService: HttpService,
               private auth: AuthenticationService, private store: AppStore) {
     this.cache = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
-    console.log(this.cache)
   }
 
   ngOnInit() {
@@ -30,6 +29,7 @@ export class ProductListCatalogComponent implements OnInit {
         .subscribe(data => {
           this.category = data.get('category');
           this.getProducts();
+          this.paginatorPage = 0;
         })
   }
 
