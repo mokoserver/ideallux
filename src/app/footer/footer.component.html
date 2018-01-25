@@ -30,6 +30,7 @@
                   <li>
                     <a class="rss" href="" title="RSS"><i class="zmdi zmdi-rss"></i></a>
                   </li>
+                  <hr>
                 </ul>
               </div>
             </div>
@@ -41,23 +42,17 @@
                     <a href="index.html"><i class="ipaltext zmdi zmdi-circle"></i><span>Главная</span></a>
                   </li>
                   <li>
-                    <a href="#"><i class="ipaltext zmdi zmdi-circle"></i><span>Доставка и оплата</span></a>
+                    <a href="#" [routerLink]="'/product-list'"><i class="ipaltext zmdi zmdi-circle"></i><span>Каталог</span></a>
                   </li>
                   <li>
-                    <a href="map.html" [routerLink]="'/map'"><i class="zmdi zmdi-circle"></i><span>Контакты</span></a>
+                    <a href="#" [routerLink]="'/delivery'"><i class="zmdi zmdi-circle"></i><span>Доставка и оплата</span></a>
                   </li>
+
                   <li>
-                    <a href="#"><i class="ipaltext zmdi zmdi-circle"></i><span>Cотрудничество</span></a>
+                    <a href="#" [routerLink]="'/product-list'" [queryParams]="{category: 'Распродажа'}"><i class="ipaltext zmdi zmdi-circle"></i><span>Распродажа</span></a>
                   </li>
-                  <li>
-                    <a href="shop.html"><i class=" zmdi zmdi-circle"></i><span>Распродажа</span></a>
-                  </li>
-                  <li>
-                    <a href="shop.html"><i class=" zmdi zmdi-circle"></i><span>Каталог</span></a>
-                  </li>
-                  <li>
-                    <a href="shop.html"><i class=" zmdi zmdi-circle"></i><span>Розетки и выключатели</span></a>
-                  </li>
+
+                  <br>
                 </ul>
               </div>
             </div>
@@ -74,6 +69,7 @@
                   <li>
                     <a href="index.html"><i class=" zmdi zmdi-circle"></i><span>Беларусь г.Минск ул.Каховская 70А</span></a>
                   </li>
+                  <br>
                 </ul>
               </div>
             </div>
