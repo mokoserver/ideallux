@@ -22,8 +22,11 @@ export class BasketTableComponent implements OnInit {
       this.http.getProductById(data._id)
           .subscribe(loaded => {
             loaded.quantity = data.quantity;
+            info.find(item => item._id === data._id).quantity = loaded.quantity;
+            info.find(item => item._id === data._id).price = loaded.price;
+            localStorage.setItem(this.auth.getUserUsername(), JSON.stringify(info));
+            this.store.setValue('productsQuantity', new Date());
             this.data$.push(loaded)
-            this.setScripts();
           })
     });
   }
@@ -40,14 +43,12 @@ export class BasketTableComponent implements OnInit {
     this.store.setValue('productsQuantity', new Date());
   }
 
-  setScripts() {
-    if (!this.scriptsSetted) {
-      this.scriptsSetted = true;
-      setTimeout(() => {
-        InitMain.cartPlusMinusButton();
-      }, 1000);
-    }
+  quantityChange(quantity, item) {
+    const cache = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
+    quantity.quantity += item;
+    cache.find(data => data._id === quantity._id).quantity = quantity.quantity;
+    cache.find(data => data._id === quantity._id).price = quantity.price;
+    localStorage.setItem(this.auth.getUserUsername(), JSON.stringify(cache));
+    this.store.setValue('productsQuantity', new Date());
   }
-
-
 }
