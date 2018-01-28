@@ -22,6 +22,10 @@ export class ProductListCatalogComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private httpService: HttpService,
               private auth: AuthenticationService, private store: AppStore) {
     this.cache = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
+    if (!this.cache) {
+      localStorage.setItem(this.auth.getUserUsername(), JSON.stringify([]));
+      this.cache = [];
+    };
   }
 
   ngOnInit() {
@@ -51,7 +55,7 @@ export class ProductListCatalogComponent implements OnInit {
   }
 
   addToBasket(id) {
-    if (this.cache.find(object => object._id == id)) {
+    if (this.cache && this.cache.find(object => object._id == id)) {
       this.cache.splice(this.cache.findIndex(data => data._id == id), 1);
       if (!this.cache.length) {
         localStorage.clear();

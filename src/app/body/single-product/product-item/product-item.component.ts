@@ -29,6 +29,7 @@ export class ProductItemComponent implements OnInit {
     this.activatedRoute.queryParamMap
         .switchMap((params: ParamMap) => {
           const cache = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
+          console.log(cache);
           if (cache) {
             const item = cache.find(object => object._id == params.get('id'));
             if (item) this.localArray.push(item);
