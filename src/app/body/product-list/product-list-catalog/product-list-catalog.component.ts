@@ -37,8 +37,8 @@ export class ProductListCatalogComponent implements OnInit {
      this.activatedRoute.queryParamMap
         .subscribe(queryParams => {
           this.category = queryParams.get('category');
-          this.getProducts();
           this.paginatorPage = 0;
+          this.getProducts();
         })
   }
 
