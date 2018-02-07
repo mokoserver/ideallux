@@ -127,6 +127,7 @@
 }
 .product-img img {
   width: 100%;
+  min-height: 262px;
 }
 .product-info {
   background: #f6f6f6 none repeat scroll 0 0;

@@ -19,8 +19,10 @@ export class BasketTableComponent implements OnInit {
     const info = JSON.parse(localStorage.getItem(this.auth.getUserUsername()));
     if (!info) return;
     info.map(data => {
+      console.log(data)
       this.http.getProductById(data._id)
           .subscribe(loaded => {
+            if (!loaded) return;
             loaded.quantity = data.quantity;
             info.find(item => item._id === data._id).quantity = loaded.quantity;
             info.find(item => item._id === data._id).price = loaded.price;

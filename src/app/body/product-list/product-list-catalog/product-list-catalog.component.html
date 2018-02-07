@@ -1,3 +1,4 @@
+
 <div class="col-md-9 col-md-push-3 col-sm-12">
   <div class="shop-content">
     <!-- shop-option start -->
@@ -21,9 +22,14 @@
           <!-- product-item start -->
           <div class="col-md-4 col-sm-4 col-xs-12" *ngFor="let item of products">
             <div class="product-item">
-              <div class="product-img">
+              <div class="product-img relative">
+                <div class="back">
+                  <div class="spinner-wrapper card-center relative">
+                    <div class="spinner"></div>
+                  </div>
+                </div>
                 <a href="#" [routerLink]="'/product'" [queryParams]="{id: item._id}">
-                  <img *ngIf="item.images" [src]="item.images[0] | async" alt=""/>
+                  <img class="relative" *ngIf="item.images" [src]="item.images[0] | async" alt=""/>
                 </a>
               </div>
               <div class="product-info">

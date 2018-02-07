@@ -70,8 +70,8 @@
                     <i class="zmdi zmdi-search"></i>
                   </button>
                   <form action="#">
-                    <div class="top-search-box">
-                      <input type="text" placeholder="Поиск товара...">
+                    <div class="top-search-box" [formGroup]="form">
+                      <input type="text" formControlName="input" placeholder="Поиск товара...">
                       <button type="submit">
                         <i class="zmdi zmdi-search"></i>
                       </button>

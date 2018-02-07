@@ -2,6 +2,9 @@ import {Component, OnInit, AfterViewInit} from '@angular/core';
 import {AppStore} from "../app.store.service";
 import {AuthenticationService} from "../autentication.service";
 import {InitMain} from "../../assets/js/main.init";
+import {FormGroup, FormControl} from "@angular/forms";
+import 'rxjs/add/operator/debounceTime';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-header',
@@ -10,8 +13,13 @@ import {InitMain} from "../../assets/js/main.init";
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   quantity: number;
+  form: FormGroup;
 
-  constructor(private store: AppStore, private auth: AuthenticationService) {
+  constructor(private store: AppStore, private auth: AuthenticationService,
+    private router: Router) {
+    this.form = new FormGroup({
+      input: new FormControl('')
+    })
   }
 
   ngOnInit() {
@@ -19,7 +27,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     this.store.select('productsQuantity')
         .subscribe((data) => {
           this.refreshBasketState()
-        })
+        });
+    this.form.valueChanges.debounceTime(200).subscribe(form => {
+      this.router.navigate(['/product-list'], { queryParams: { filter: form.input } })
+    })
   }
 
   refreshBasketState() {

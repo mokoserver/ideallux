@@ -28,10 +28,15 @@ export class ProductListCatalogComponent implements OnInit {
     };
   }
 
+  log(e, image) {
+    e.preventDefault();
+    console.log(image)
+  }
+
   ngOnInit() {
      this.activatedRoute.queryParamMap
-        .subscribe(data => {
-          this.category = data.get('category');
+        .subscribe(queryParams => {
+          this.category = queryParams.get('category');
           this.getProducts();
           this.paginatorPage = 0;
         })
