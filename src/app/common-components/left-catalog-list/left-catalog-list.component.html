@@ -1,8 +1,9 @@
 <div class="col-md-{{colMd}} col-md{{pull}}-9 col-sm-12">
   <!-- widget-search -->
   <aside class="widget-search mb-30">
-    <form action="#"><button type="submit"><i class="zmdi zmdi-search"></i></button>
-      <input type="text" placeholder="Поиск товара...">
+    <form action="#" [formGroup]="form">
+      <button type="submit"><i class="zmdi zmdi-search"></i></button>
+      <input type="text" formControlName="input" placeholder="Поиск товара...">
 
     </form>
   </aside>
