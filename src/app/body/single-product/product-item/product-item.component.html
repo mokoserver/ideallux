@@ -6,28 +6,26 @@
       <!-- imgs-zoom-area start -->
       <div class="col-md-5 col-sm-5 col-xs-12" *ngIf="product.images[0]">
         <div class="col-md-5 col-sm-5 col-xs-12">
-           <div class="imgs-zoom-area">
-             <img  src="{{product.images[0] | async}}" (click)="openModalGallery(product.images[0])">
+          <div class="imgs-zoom-area">
+            <img src="{{product.images[0] | async}}" (click)="openModalGallery(product.images[0])">
 
 
+            <!--                      <div class="row">
+                                    <div class="col-xs-12">
+                                      <div id="gallery_01" class="carousel-btn slick-arrow-3 mt-30">
+                                        <div class="p-c" *ngFor="let image of product.images">
+                                          <a>
+                                            <img class="zoom_03" src="{{image | async}}">
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>-->
+          </div>
+        </div>
+      </div>
 
-
-             <!--                      <div class="row">
-                                     <div class="col-xs-12">
-                                       <div id="gallery_01" class="carousel-btn slick-arrow-3 mt-30">
-                                         <div class="p-c" *ngFor="let image of product.images">
-                                           <a>
-                                             <img class="zoom_03" src="{{image | async}}">
-                                           </a>
-                                         </div>
-                                       </div>
-                                     </div>
-                                   </div>-->
-           </div>
-         </div>
-       </div>
-
-       <!-- single-product-info start -->
+      <!-- single-product-info start -->
       <div class="col-md-7 col-sm-7 col-xs-12">
         <div class="single-product-info">
           <h3 class="text-black-1">{{product.title}} </h3>
@@ -45,30 +43,36 @@
             </div>
           </div>
           <hr>
-          <!-- plus-minus-pro-action -->
-          <div class="plus-minus-pro-action">
-            <div class="sin-plus-minus f-left clearfix">
-              <li>
-                <p class="color-title f-left">КОЛИЧЕСТВО</p>
-              </li>
-              <li>
-                <form>
-                  <div class="cart-plus-minus f-left">
-                    <input type="text" value="1" name="qtybutton" id="qtybutton" class="cart-plus-minus-box">
-                  </div>
-                </form>
-              </li>
-            </div>
-            <div class="sin-pro-action f-right">
-              <ul class="action-button">
+
+          <div class="shop-option box-shadow mb-30 clearfix">
+
+
+            <!-- plus-minus-pro-action -->
+            <div class="plus-minus-pro-action">
+              <div class="sin-plus-minus f-left clearfix">
                 <li>
-                  <h3 class="pro-price">BYN {{product.price}}</h3>
+                  <p class="color-title f-left">КОЛИЧЕСТВО</p>
                 </li>
                 <li>
-                  <a [ngClass]="{'activeBasket': localArray.length}" tabindex="0" (click)="addToBasket(product._id)"><i
+                  <form>
+                    <div class="cart-plus-minus f-left">
+                      <input type="text" value="1" name="qtybutton" id="qtybutton" class="cart-plus-minus-box">
+                    </div>
+                  </form>
+                </li>
+              </div>
+              <div class="sin-pro-action f-right">
+                <ul class="action-button">
+                  <li>
+                    <h3 class="pro-price">BYN {{product.price}}</h3>
+                  </li>
+                  <li>
+                    <a [ngClass]="{'activeBasket': localArray.length}" tabindex="0"
+                       (click)="addToBasket(product._id)"><i
                       class="zmdi zmdi-shopping-cart-plus"></i></a>
-                </li>
-              </ul>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
