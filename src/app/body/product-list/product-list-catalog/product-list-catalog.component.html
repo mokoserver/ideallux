@@ -12,6 +12,14 @@
           <a href="#list-view" data-toggle="tab"><i class="zmdi zmdi-view-list-alt"></i></a>
         </li>
       </ul>
+      <!-- shop-pagination
+      <mat-paginator *ngIf="products" [length]="9999"
+                     [pageSize]="paginatorPageSize"
+                     [pageSizeOptions]="[3, 9, 36, 72]"
+                     [pageIndex]="paginatorPage"
+                     (page)="getPaginatorOptions($event)">
+      </mat-paginator>
+       shop-pagination end -->
     </div>
     <!-- shop-option end -->
     <div class="tab-content">
@@ -83,13 +91,16 @@
       </div>
     </div>
     <!-- Tab Content end -->
+    <div class="shop-option box-shadow mb-30 clearfix">
+        <!-- shop-pagination end -->
+        <mat-paginator *ngIf="products" [length]="9999"
+                       [pageSize]="paginatorPageSize"
+                       [pageSizeOptions]="[3, 9, 36, 72]"
+                       [pageIndex]="paginatorPage"
+                       (page)="getPaginatorOptions($event)">
+        </mat-paginator>
+        <!-- shop-pagination end -->
+    </div>
 
-    <mat-paginator *ngIf="products" [length]="9999"
-                   [pageSize]="paginatorPageSize"
-                   [pageSizeOptions]="[3, 9, 36, 72]"
-                   [pageIndex]="paginatorPage"
-                   (page)="getPaginatorOptions($event)">
-    </mat-paginator>
-    <!-- shop-pagination end -->
   </div>
 </div>
