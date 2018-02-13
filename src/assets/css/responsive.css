@@ -593,6 +593,7 @@ p {
 
 /*header-search & total-cart*/
 .search-top-cart {
+
   margin-bottom: 6px;
 }
 /*header-search*/
@@ -1173,11 +1174,11 @@ hr {
 
 
 .top-search-box {
-  width: 380px;
+  width: 270px;
 }
 .header-search-inner:hover .top-search-box,
 .sticky .header-search-inner:hover .top-search-box {
-  width: 380px;
+  width: 270px;
 }
 .pro-tab-menu ul li {
   margin-bottom: 0;

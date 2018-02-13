@@ -211,7 +211,7 @@ NOTE: This is Header style file. All Header related style included in this file.
  }
 
 .logo {
-  padding: 25px 0;
+  padding: 25px 0 0 12%;
   transition: all 0.3s ease 0s;
 }
 .logo img{
