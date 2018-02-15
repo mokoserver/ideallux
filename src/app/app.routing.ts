@@ -6,6 +6,7 @@ import {BasketCardComponent} from './body/basket-card/basket-card.component';
 import {MapComponent} from "./body/map/map.component";
 import {PdfCatalogComponent} from "./body/pdf-catalog/pdf-catalog.component";
 import {DeliveryComponent} from "./body/delivery/delivery.component";
+import {TestComponent} from "./body/test/test.component";
 
 export const AppRoutes: Routes = [
   {path: '', component: CatalogComponent},
@@ -15,4 +16,5 @@ export const AppRoutes: Routes = [
   {path: 'map', component: MapComponent},
   {path: 'pdf-catalog', component: PdfCatalogComponent},
   {path: 'delivery', component: DeliveryComponent},
+  {path: 'test', component: TestComponent},
 ];

@@ -31,6 +31,7 @@ import {MaterialaginatorIntl} from "./shared/mat-pager-intl";
 import {MatPaginatorIntl, MatDialogModule} from "@angular/material";
 import { DeliveryComponent } from './body/delivery/delivery.component';
 import { ImageGalleryModalComponent } from './body/single-product/product-item/image-gallery-modal/image-gallery-modal.component';
+import { TestComponent } from './body/test/test.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ImageGalleryModalComponent } from './body/single-product/product-item/i
     MapComponent,
     PdfCatalogComponent,
     DeliveryComponent,
-    ImageGalleryModalComponent
+    ImageGalleryModalComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
