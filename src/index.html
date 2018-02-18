@@ -37,6 +37,7 @@
     gtag('config', 'UA-112456431-1');
   </script>
 
+  <link rel="stylesheet" href="../node_modules/swiper/dist/css/swiper.min.css">
 
   <!-- Favicon -->
   <link rel="shortcut icon" type="image/x-icon" href="assets/img/icon/favicon.png">
@@ -87,7 +88,7 @@
   </div>
 </app-root>
 
-
+<script src="../node_modules/swiper/dist/js/swiper.min.js"></script>
 <!-- Placed JS at the end of the document so the pages load faster -->
 <!-- jquery latest version -->
 <script src="assets/js/vendor/jquery-3.1.1.min.js"></script>
@@ -100,6 +101,29 @@
 <!-- Main js file that contents all jQuery plugins activation. -->
 <script src="assets/js/main.js"></script>
 
+<script>
+  var mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    direction: 'vertical',
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  })
+</script>
 
 </body>
 </html>
