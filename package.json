@@ -30,7 +30,6 @@
     "@angular/platform-browser": "^4.4.5",
     "@angular/platform-browser-dynamic": "^4.4.5",
     "@angular/router": "^4.4.5",
-    "@types/bootstrap-slider": "^9.9.0",
     "core-js": "^2.4.1",
     "express": "^4.16.1",
     "rxjs": "^5.1.0",

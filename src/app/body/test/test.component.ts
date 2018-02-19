@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
-import Swiper from 'swiper';
+declare const require;
+// import Swiper from 'swiper';
 
 @Component({
   selector: 'app-test',
@@ -12,7 +13,8 @@ export class TestComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    const swiper = new Swiper('.swiper-container', {
+    const Swiper = require('../../../../node_modules/swiper/dist/js/swiper.min')
+    const swiperElement = new Swiper('.swiper-container', {
       effect: 'coverflow',
       grabCursor: true,
       centeredSlides: true,
