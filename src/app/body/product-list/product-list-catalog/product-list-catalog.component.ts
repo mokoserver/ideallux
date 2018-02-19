@@ -17,6 +17,7 @@ export class ProductListCatalogComponent implements OnInit {
   @Input() listView = true;
   paginatorPage: any = 0;
   category: string;
+  filter: {};
   cache;
 
   constructor(private activatedRoute: ActivatedRoute, private httpService: HttpService,
@@ -25,18 +26,24 @@ export class ProductListCatalogComponent implements OnInit {
     if (!this.cache) {
       localStorage.setItem(this.auth.getUserUsername(), JSON.stringify([]));
       this.cache = [];
-    };
-  }
-
-  log(e, image) {
-    e.preventDefault();
-    console.log(image)
+    }
   }
 
   ngOnInit() {
      this.activatedRoute.queryParamMap
         .subscribe(queryParams => {
           this.category = queryParams.get('category');
+
+          if (queryParams.get('filter')) {
+            const filter = queryParams.get('filter').split(':');
+            this.filter = {
+              key: filter[0],
+              value: filter[1]
+            };
+          } else {
+            this.filter = undefined;
+          }
+
           this.paginatorPage = 0;
           this.getProducts();
         })
@@ -49,7 +56,7 @@ export class ProductListCatalogComponent implements OnInit {
   }
 
   getProducts() {
-    this.httpService.getProducts(this.category, this.paginatorPage, this.paginatorPageSize)
+    this.httpService.getProducts(this.category, this.paginatorPage, this.paginatorPageSize, this.filter)
         .subscribe(data => this.products = data);
   }
 
