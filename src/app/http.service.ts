@@ -209,11 +209,14 @@ export class HttpService {
       .catch(this.handleError)
   }
 
-  getProducts(category?, page?, pageSize?): Observable<Product[]> {
+  getProducts(category?, page?, pageSize?, filter?): Observable<Product[]> {
     let params = new HttpParams();
 
     if (category) {
       params = params.set('category', category);
+    }
+    if (filter) {
+      params = params.set('filter', `${filter.key}:${filter.value}`);
     }
 
     if (pageSize) {

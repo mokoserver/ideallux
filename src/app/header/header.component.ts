@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   form: FormGroup;
 
   constructor(private store: AppStore, private auth: AuthenticationService,
-    private router: Router) {
+              private router: Router) {
     this.form = new FormGroup({
       input: new FormControl('')
     })
@@ -29,7 +29,11 @@ export class HeaderComponent implements OnInit, AfterViewInit {
           this.refreshBasketState()
         });
     this.form.valueChanges.debounceTime(200).subscribe(form => {
-      this.router.navigate(['/product-list'], { queryParams: { filter: form.input } })
+      this.router.navigate(
+          ['/product-list'], {
+            queryParams: {filter: form.input ? `title:${form.input}` : ``},
+            queryParamsHandling: 'merge'
+          })
     })
   }
 
