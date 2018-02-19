@@ -2,6 +2,14 @@
 @import '~swiper/dist/css/swiper.min.css';
 
 .swiper-container {
-  width: 600px;
-  height: 300px;
+  width: 1500px;
+  height: 529px;
+  padding: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 883px;
+  height: 479px;
 }
