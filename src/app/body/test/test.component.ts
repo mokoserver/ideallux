@@ -15,6 +15,9 @@ export class TestComponent implements OnInit {
   ngOnInit() {
     const Swiper = require('../../../../node_modules/swiper/dist/js/swiper.min')
     const swiperElement = new Swiper('.swiper-container', {
+      initialSlide: '1',
+      speed: 300,
+      spaceBetween: 100,
       effect: 'coverflow',
       grabCursor: true,
       centeredSlides: true,
@@ -32,6 +35,7 @@ export class TestComponent implements OnInit {
       },
       pagination: {
         el: '.swiper-pagination',
+        clickable: true,
       }
     });
   }
