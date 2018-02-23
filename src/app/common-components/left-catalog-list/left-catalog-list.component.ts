@@ -18,7 +18,7 @@ export class LeftCatalogListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.form.valueChanges.debounceTime(200).subscribe(form => {
+    this.form.valueChanges.debounceTime(400).subscribe(form => {
       this.router.navigate(
           ['/product-list'], {
             queryParams: {filter: form.input ? `title:${form.input}` : ``},

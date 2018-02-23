@@ -28,7 +28,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
         .subscribe((data) => {
           this.refreshBasketState()
         });
-    this.form.valueChanges.debounceTime(200).subscribe(form => {
+    this.form.valueChanges.debounceTime(400).subscribe(form => {
       this.router.navigate(
           ['/product-list'], {
             queryParams: {filter: form.input ? `title:${form.input}` : ``},

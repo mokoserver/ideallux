@@ -1,10 +1,9 @@
 import {Component, OnInit, Input} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {HttpService} from "../../../http.service";
-import {Observable, Subscription} from "rxjs";
-import {Product} from "../../../models/product";
 import {AuthenticationService} from "../../../autentication.service";
 import {AppStore} from "../../../app.store.service";
+import {products} from './productsOK'
 
 @Component({
   selector: 'app-product-list-catalog',
@@ -12,7 +11,7 @@ import {AppStore} from "../../../app.store.service";
   styleUrls: ['./product-list-catalog.component.css']
 })
 export class ProductListCatalogComponent implements OnInit {
-  products: Product[];
+  products: any[];
   @Input() paginatorPageSize = 9;
   @Input() listView = true;
   paginatorPage: any = 0;
@@ -33,6 +32,7 @@ export class ProductListCatalogComponent implements OnInit {
      this.activatedRoute.queryParamMap
         .subscribe(queryParams => {
           this.category = queryParams.get('category');
+          this.paginatorPage = 0;
 
           if (queryParams.get('filter')) {
             const filter = queryParams.get('filter').split(':');
@@ -40,12 +40,11 @@ export class ProductListCatalogComponent implements OnInit {
               key: filter[0],
               value: filter[1]
             };
+            this.getProductsFromFile();
           } else {
             this.filter = undefined;
+            this.getProducts();
           }
-
-          this.paginatorPage = 0;
-          this.getProducts();
         })
   }
 
@@ -58,6 +57,29 @@ export class ProductListCatalogComponent implements OnInit {
   getProducts() {
     this.httpService.getProducts(this.category, this.paginatorPage, this.paginatorPageSize, this.filter)
         .subscribe(data => this.products = data);
+  }
+
+  getProductsFromFile() {
+    if (products.length && this.filter && this.filter['value']) {
+      this.products = [...products].filter((obj: any) => {
+        const title = obj.title.toLowerCase();
+        const value = this.filter['value'].toLowerCase();
+        return (typeof title === 'string') ? title.includes(value) : false;
+      })
+      .map(items => {
+        const item = <any>items;
+        if (item.images) {
+          for (let j = 0; j < item.images.length; j++) {
+            if (item.images[j].id) {
+              item.images[j] = this.httpService.getImage(item.images[j].id)
+            }
+          }
+        }
+        return item
+      });
+      console.log(this.products)
+
+    }
   }
 
   getPaginatorOptions(options) {
