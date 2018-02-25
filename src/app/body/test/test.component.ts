@@ -36,6 +36,7 @@ export class TestComponent implements OnInit {
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
+        speed: 300,
       }
     });
   }
