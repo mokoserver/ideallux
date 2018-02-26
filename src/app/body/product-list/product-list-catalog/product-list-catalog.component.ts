@@ -40,7 +40,8 @@ export class ProductListCatalogComponent implements OnInit {
               key: filter[0],
               value: filter[1]
             };
-            this.getProductsFromFile();
+            // this.getProductsFromFile();
+            this.getProducts();
           } else {
             this.filter = undefined;
             this.getProducts();
